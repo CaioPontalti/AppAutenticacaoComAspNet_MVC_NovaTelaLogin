@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index - Painel</h2>
+
+@if (TempData["Mensagem"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["Mensagem"]
+    </div>
+}
+
+@*Vem do Controller 'PainelController'*@
+@if (ViewBag.MensagemTipoUsuario != null)
+{
+    <div class="alert alert-warning">
+        @ViewBag.MensagemTipoUsuario
+    </div>
+}
+
+@*Vem do controle de acesso da classe FiltersAcesso*@
+@if (TempData["ErrorAcessoNegado"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["ErrorAcessoNegado"]
+    </div>
+}
